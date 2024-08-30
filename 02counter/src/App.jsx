@@ -8,6 +8,7 @@ function App() {
 
   const increaseCounter = () =>{
     // counter = counter +1
+    
     if(counter>10){
       counter = 10
       alert("Counter is max")
