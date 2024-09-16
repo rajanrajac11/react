@@ -1,8 +1,6 @@
-import React from "react";
-
+import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
 import { Outlet } from "react-router-dom";
-import Header from "../../07reactrouter/src/components/Header/Header";
-import Footer from "../../07reactrouter/src/components/Footer/Footer";
 
 function Layout() {
   return (
@@ -13,5 +11,3 @@ function Layout() {
     </>
   );
 }
-
-export default Layout;
