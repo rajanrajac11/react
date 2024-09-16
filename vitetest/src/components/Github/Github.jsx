@@ -6,7 +6,7 @@ function Github() {
   return (
     <div>
       Github followers: {data.followers}
-      <img src={data.avatar_url} alt="" />
+      <img src={data.avatar_url} alt="" height={100} width={100} />
     </div>
   );
 }
