@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 function User() {
   const { id } = useParams();
-  return <div>User: {id}</div>;
+  return <div className="text-center">User: {id}</div>;
 }
 
 export default User;

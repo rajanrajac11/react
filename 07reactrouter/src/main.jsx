@@ -12,8 +12,7 @@ import About from "./components/About/About.jsx";
 import Contact from "./components/Contact/Contact.jsx";
 import { Route } from "react-router-dom";
 import User from "./components/User/User.jsx";
-import Github from "./components/GIthub/GIthub.jsx";
-import { githubInfoLoader } from "./components/GIthub/GIthub.jsx";
+import Github, { githubInfoLoader } from "./components/GIthub/GIthub.jsx";
 
 // const router = createBrowserRouter([
 //   {
