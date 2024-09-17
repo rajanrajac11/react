@@ -8,7 +8,7 @@ import Profile from "./components/Profile";
 function App() {
   return (
     <UserContextProvider>
-      <h1>Hello everyone. I am happy and grinding is important</h1>
+      <h1>Hello everyone. Grinding is important</h1>
       <Login />
       <Profile />
     </UserContextProvider>
