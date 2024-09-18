@@ -1,12 +1,14 @@
 import React from "react";
-import { createBrowserRouter } from "react-router-dom";
+import UserContextProvider from "./Context/UserContextProvider";
+import Login from "./Components/Login";
+import Profile from "./Components/Profile";
 
 function App() {
-  const router = createBrowserRouter();
   return (
-    <>
-      <h1>Hello</h1>
-    </>
+    <UserContextProvider>
+      <Login />
+      <Profile />
+    </UserContextProvider>
   );
 }
 
