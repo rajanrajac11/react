@@ -1,14 +1,25 @@
-import React from "react";
-import UserContextProvider from "./Context/UserContextProvider";
-import Login from "./Components/Login";
-import Profile from "./Components/Profile";
+import React, { useEffect, useState } from "react";
+import { ThemeContextProvider } from "./Context/Theme";
+import ThemeBtn from "./Component/ThemeBtn";
+import Card from "./Component/Card";
 
 function App() {
+  const [themeMode, setThemeMode] = useState("light");
+  function lightTheme() {
+    setThemeMode("light");
+  }
+  function darkTheme() {
+    setThemeMode("dark");
+  }
+  useEffect(() => {
+    document.querySelector("html").classList.remove("light", "dark");
+    document.querySelector("html").classList.add(themeMode);
+  }, [themeMode]);
   return (
-    <UserContextProvider>
-      <Login />
-      <Profile />
-    </UserContextProvider>
+    <ThemeContextProvider value={{ themeMode, lightTheme, darkTheme }}>
+      <ThemeBtn />
+      <Card />
+    </ThemeContextProvider>
   );
 }
 
