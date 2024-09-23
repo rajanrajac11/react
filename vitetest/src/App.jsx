@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Counter from "./assets/Components/Counter";
+import BgChanger from "./assets/Components/BgChanger";
 
 function App() {
   return (
     <>
-      <Counter />
+      <BgChanger />
     </>
   );
 }
