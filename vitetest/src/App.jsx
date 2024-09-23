@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import BgChanger from "./assets/Components/BgChanger";
+import Password from "./assets/Components/Password";
 
 function App() {
   return (
     <>
-      <BgChanger />
+      <Password />
     </>
   );
 }
