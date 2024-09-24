@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 function Password() {
   const [length, setLength] = useState(7);
@@ -7,10 +7,11 @@ function Password() {
   const [charAllow, setCharAllow] = useState(false);
 
   const passref = useRef();
-  const copyToClipBoard = () => {
-    window.navigator.clipboard.writeText(password);
+  const copyToClipBoard = useCallback(() => {
     passref.current?.select();
-  };
+    passref.current?.setSelectionRange(0, 5);
+    window.navigator.clipboard.writeText(password);
+  }, [password]);
 
   const generatePassword = () => {
     let str = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ";
