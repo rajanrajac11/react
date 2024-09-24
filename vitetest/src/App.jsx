@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Password from "./assets/Components/Password";
 
 function App() {
-  return (
-    <>
-      <Password />
-    </>
-  );
+  return <></>;
 }
 
 export default App;
