@@ -24,11 +24,12 @@ function App() {
   }, []);
 
   return !loading ? (
-    <div className="min-h-screen flex flex-wrap justify-center bg-gray-500">
-      <div className="w-full block">
+    <div className="min-h-screen bg-gray-500 flex flex-wrap justify-center items-center ">
+      <div className="">
         <Header />
         <main>
           <Outlet />
+          {/* Remaining */}
         </main>
         <Footer />
       </div>
