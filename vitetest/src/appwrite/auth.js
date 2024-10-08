@@ -1,6 +1,6 @@
 import React from "react";
 import { Client, Account, ID } from "appwrite";
-import { conf } from "../conf";
+import conf from "../conf/conf";
 
 class authServices {
   client = new Client();
