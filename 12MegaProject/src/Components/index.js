@@ -9,7 +9,7 @@ import Signup from "./Signup";
 import Login from "./Login";
 import PostForm from "../Components/post-form/PostForm";
 import PostCard from "./PostCard";
-
+import AuthLayout from "../Components/AuthLayout";
 export {
   Header,
   Footer,
