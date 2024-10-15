@@ -10,7 +10,9 @@ import Login from "./Login";
 import PostForm from "../Components/post-form/PostForm";
 import PostCard from "./PostCard";
 import AuthLayout from "../Components/AuthLayout";
-export {
+import Input from "./input";
+import Select from "./Select";
+export default {
   Header,
   Footer,
   Container,
@@ -22,4 +24,7 @@ export {
   Login,
   PostForm,
   PostCard,
+  AuthLayout,
+  Input,
+  Select,
 };

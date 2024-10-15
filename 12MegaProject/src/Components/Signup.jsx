@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import authService from "../appwrite/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../store/authSlice";
-import { Button, Input, Logo } from "./";
+// import { Button, Input, Logo } from "./";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
+import Button from "./Button";
 
 function Signup() {
   const navigate = useNavigate();
@@ -72,14 +73,16 @@ function Signup() {
               })}
             />
             <Input
-            label="Password"
-            placeholder="Enter your password"
-            type="password"
-            {...register('password'),{
-              required:true,      
-            }}
+              label="Password"
+              placeholder="Enter your password"
+              type="password"
+              {...register("password", {
+                required: true,
+              })}
             />
-            <Button type="submit" className="w-full">Create Account</Button>
+            <Button type="submit" className="w-full">
+              Create Account
+            </Button>
           </div>
         </form>
       </div>

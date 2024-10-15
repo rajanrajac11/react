@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { login as authLogin, logout } from "../store/authSlice";
-import { Button, Input, Logo } from "./index";
+// import { Button, Input, Logo } from "./index";
 import { useDispatch } from "react-redux";
 import authService from "../appwrite/auth";
 import { useForm } from "react-hook-form";
+import Button from "./Button";
 
 function Login() {
   const navigate = useNavigate();
@@ -66,17 +67,16 @@ function Login() {
               })}
             />
             <Input
-            label="Password"
-            placeholder="Enter your password"
-            type="password"
-            {...register('password'),{
-              required:true,      
-            }}
+              label="Password"
+              placeholder="Enter your password"
+              type="password"
+              {...register("password", {
+                required: true,
+              })}
             />
-            <Button
-            type="subit"
-            className="w-full"
-            >Sign in </Button>
+            <Button type="subit" className="w-full">
+              Sign in{" "}
+            </Button>
           </div>
         </form>
       </div>
