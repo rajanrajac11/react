@@ -1,13 +1,13 @@
-import React, { useContext, useState } from "react";
-import UserContext from "./UserContext";
+import React, { createContext, useContext } from "react";
 
-function ContextProvider({ children }) {
-  const [user, setUser] = useState("");
-  return (
-    <UserContext.Provider value={{ user, setUser }}>
-      {children}
-    </UserContext.Provider>
-  );
+const ThemeContext = createContext({
+  theme: "light",
+  lightTheme: () => {},
+  darkTheme: () => {},
+});
+
+export const ThemeProvider = ThemeContext.Provider;
+
+export default function useTheme() {
+  return useContext(ThemeContext);
 }
-
-export default ContextProvider;
