@@ -1,8 +1,7 @@
 import React from "react";
-import PasswordGenerator from "./Components/PasswordGenerator";
 
 function App() {
-  return <PasswordGenerator />;
+  return <div>App</div>;
 }
 
 export default App;
