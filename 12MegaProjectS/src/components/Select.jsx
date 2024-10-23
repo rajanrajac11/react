@@ -1,7 +1,7 @@
 import React from "react";
 import { ID } from "appwrite";
 
-function Select({ options, classname = "", label, ...props }, ref) {
+function Select({ options = [], classname = "", label, ...props }, ref) {
   const id = ID.unique();
 
   return (

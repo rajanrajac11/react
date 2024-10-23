@@ -105,9 +105,9 @@ export class DocumentService {
       return false;
     }
   }
-  async getFilePreview(fileId) {
+  getFilePreview(fileId) {
     try {
-      await this.buckets.getFilePreview(conf.appwriteBucketId, fileId);
+      this.buckets.getFilePreview(conf.appwriteBucketId, fileId);
       return true;
     } catch (error) {
       console.log("Document Service error :: getFilePreview error : ", error);
