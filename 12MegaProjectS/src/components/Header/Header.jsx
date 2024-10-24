@@ -61,7 +61,7 @@ function Header() {
               ) : null
             )}{" "}
             {authStatus && (
-              <li key="logout">
+              <li key="logout" className="hover:bg-blue-100 px-6 py-2">
                 <LogoutBtn />
               </li>
             )}

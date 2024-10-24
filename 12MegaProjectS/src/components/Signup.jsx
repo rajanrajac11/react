@@ -1,13 +1,13 @@
-import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../store/AuthSlice";
 import { Button, Logo, Input } from "./index";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
+import authService from "../appwrite/auth";
 
 function Signup() {
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   const [error, setError] = useState();
   const dispatch = useDispatch();
   const { register, handleSubmit } = useForm();
@@ -89,7 +89,5 @@ function Signup() {
     </div>
   );
 }
-import { useState } from "react";
-import { useDispatch } from "react-redux";
 
 export default Signup;

@@ -3,16 +3,18 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import documentService from "../../appwrite/config";
+import { Select, Input, RTE, Button } from "../index";
 
 function PostForm({ post }) {
-  const { register, handleSubmit, watch, setValue, getValues } = useForm({
-    defaultValues: {
-      title: post?.title || "",
-      slug: post?.slut || "",
-      content: post?.content || "",
-      status: post?.content || "active",
-    },
-  });
+  const { register, handleSubmit, watch, setValue, getValues, control } =
+    useForm({
+      defaultValues: {
+        title: post?.title || "",
+        slug: post?.slut || "",
+        content: post?.content || "",
+        status: post?.content || "active",
+      },
+    });
 
   const navigate = useNavigate();
   const userData = useSelector((state) => state.auth.userData);
