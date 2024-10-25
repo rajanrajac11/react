@@ -39,7 +39,7 @@ function Header() {
     },
   ];
   return (
-    <header cla>
+    <header>
       <Container>
         <nav className="flex">
           <div className="mr-4">

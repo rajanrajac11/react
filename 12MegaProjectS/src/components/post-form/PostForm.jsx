@@ -30,10 +30,10 @@ function PostForm({ post }) {
       const dbPost = await documentService.updatePost(post.$id, {
         ...data,
         featuredImage: file ? file.$id : undefined,
-        if(dbPost) {
-          navigate(`/post/${dbPost.$id}`);
-        },
       });
+      if (dbPost) {
+        navigate(`/post/${dbPost.$id}`);
+      }
     } else {
       const file = await documentService.uploadFile(data.image[0]);
 
@@ -56,7 +56,7 @@ function PostForm({ post }) {
       return value
         .trim()
         .toLowerCase()
-        .replace(/^[aA-zZ\d\s]+/g, "-")
+        .replace(/[^aA-zZ\d\s]+/g, "-")
         .replace(/\s/g, "-");
 
       return "";
