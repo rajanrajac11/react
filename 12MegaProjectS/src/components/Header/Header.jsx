@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Container from "../container/Container";
 import Logo from "../Logo";
@@ -39,7 +39,7 @@ function Header() {
     },
   ];
   return (
-    <header>
+    <header cla>
       <Container>
         <nav className="flex">
           <div className="mr-4">
@@ -51,12 +51,16 @@ function Header() {
             {navItems.map((item) =>
               item.active ? (
                 <li key={item.name}>
-                  <button
-                    onClick={() => navigate(item.slug)}
-                    className="inline-block px-6 py-2 duration-200 hover:bg-blue-100"
+                  <NavLink
+                    to={item.slug}
+                    className={({ isActive }) =>
+                      `inline-block px-6 py-2 duration-200 hover:bg-blue-100 ${
+                        isActive ? "bg-orange-400" : null
+                      }`
+                    }
                   >
                     {item.name}
-                  </button>
+                  </NavLink>
                 </li>
               ) : null
             )}{" "}
