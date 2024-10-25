@@ -14,7 +14,14 @@ export class DocumentService {
     this.buckets = new Storage(this.client);
   }
 
-  async createPost({ slug, title, content, featuredImage, status, userId }) {
+  async createPost({
+    slug,
+    title,
+    content,
+    featuredImage,
+    status,
+    userId = ID.unique(),
+  }) {
     try {
       return await this.databases.createDocument(
         conf.appwriteDatabaseId,
