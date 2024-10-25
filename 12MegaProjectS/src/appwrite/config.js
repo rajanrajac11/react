@@ -113,13 +113,7 @@ export class DocumentService {
     }
   }
   getFilePreview(fileId) {
-    try {
-      this.buckets.getFilePreview(conf.appwriteBucketId, fileId);
-      return true;
-    } catch (error) {
-      console.log("Document Service error :: getFilePreview error : ", error);
-      return false;
-    }
+    return this.buckets.getFilePreview(conf.appwriteBucketId, fileId);
   }
 
   async deleteFile(fileId) {
