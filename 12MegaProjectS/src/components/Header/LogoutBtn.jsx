@@ -13,7 +13,7 @@ function LogoutBtn(width = "100px") {
     navigate("/");
   };
   return (
-    <button width={width} onClick={logoutHandler}>
+    <button width={width} onClick={logoutHandler} className="text-white">
       Logout
     </button>
   );

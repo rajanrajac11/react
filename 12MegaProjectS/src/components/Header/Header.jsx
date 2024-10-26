@@ -39,7 +39,7 @@ function Header() {
     },
   ];
   return (
-    <header className="bg-green-600 p-3 flex rounded-xl">
+    <header className="bg-gray-700 p-3 flex rounded-xl">
       <Container>
         <nav className="flex">
           <div className="mr-4">
@@ -54,7 +54,7 @@ function Header() {
                   <NavLink
                     to={item.slug}
                     className={({ isActive }) =>
-                      `inline-block px-6 py-2 duration-200 hover:bg-blue-500 text-white ${
+                      `inline-block px-6 py-2 duration-200 hover:bg-blue-500 text-white rounded-xl ${
                         isActive ? "bg-blue-400" : null
                       }`
                     }
