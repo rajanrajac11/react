@@ -47,7 +47,7 @@ function Header() {
               <Logo width="70px" />
             </Link>
           </div>
-          <ul className="flex ml-auto">
+          <ul className="flex ml-auto gap-3">
             {navItems.map((item) =>
               item.active ? (
                 <li key={item.name}>
