@@ -46,6 +46,7 @@ function PostForm({ post }) {
         });
         if (dbPost) {
           navigate(`/post/${file.$id}`);
+          alert("Post Added!");
         }
       }
     }
@@ -58,8 +59,6 @@ function PostForm({ post }) {
         .toLowerCase()
         .replace(/[^aA-zZ\d\s]+/g, "-")
         .replace(/\s/g, "-");
-
-      return "";
     }
   }, []);
 

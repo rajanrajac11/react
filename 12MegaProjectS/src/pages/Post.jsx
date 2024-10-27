@@ -28,6 +28,7 @@ export default function Post() {
       if (status) {
         appwriteService.deleteFile(post.featuredImage);
         navigate("/");
+        alert("Post Deleted Successfully.");
       }
     });
   };

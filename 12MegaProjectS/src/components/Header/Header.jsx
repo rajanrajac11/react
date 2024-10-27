@@ -27,11 +27,11 @@ function Header() {
       slug: "/signup",
       active: !authStatus,
     },
-    {
-      name: "All Posts",
-      slug: "/all-posts",
-      active: authStatus,
-    },
+    // {
+    //   name: "All Posts",
+    //   slug: "/all-posts",
+    //   active: authStatus,
+    // },
     {
       name: "Add Post",
       slug: "/add-post",
