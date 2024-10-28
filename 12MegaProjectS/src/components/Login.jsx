@@ -22,12 +22,11 @@ function Login() {
       const session = await authService.login(data);
       if (session) {
         const userData = await authService.getCurrentUser();
-        if (userData) {
-          dispatch(storeLogin(userData));
-          navigate("/");
-        }
+        if (userData) dispatch(storeLogin(userData));
+        navigate("/");
       }
     } catch (error) {
+      error.message = error.message.replace(/^AppwriteException:\s*/, "");
       setError(error.message);
     }
   };
