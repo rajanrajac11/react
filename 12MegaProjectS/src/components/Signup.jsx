@@ -22,6 +22,11 @@ function Signup() {
         navigate("/");
       }
     } catch (error) {
+      error.message = error.message.replace(/^AppwriteException:\s*/, "");
+      error.message = error.message.replace(
+        /id, email, or phone/,
+        "username or email"
+      );
       setError(error.message);
     }
   };

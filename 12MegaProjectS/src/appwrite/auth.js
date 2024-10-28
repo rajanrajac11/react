@@ -26,6 +26,7 @@ export class AuthService {
       }
     } catch (error) {
       console.log("Appwrite service error:: createAccount error : ", error);
+      throw new Error(error);
     }
   }
 
