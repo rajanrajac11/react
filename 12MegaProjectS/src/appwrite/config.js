@@ -36,7 +36,7 @@ export class DocumentService {
         }
       );
     } catch (error) {
-      console.log("Document Service error :: createDocumnt error : ", error);
+      console.log("Document Service error :: createPost error : ", error);
       return false;
     }
   }
@@ -67,7 +67,7 @@ export class DocumentService {
         slug
       );
     } catch (error) {
-      console.log("Document Service error :: getDocumnt error : ", error);
+      console.log("Document Service error :: getPost error : ", error);
       return false;
     }
   }
