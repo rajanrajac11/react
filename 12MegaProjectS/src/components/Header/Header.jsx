@@ -56,9 +56,11 @@ function Header() {
                     <NavLink
                       to={item.slug}
                       className={({ isActive }) =>
-                        `inline-block px-6 py-2 duration-200 hover:bg-blue-500 text-white rounded-xl ${
-                          isActive ? "bg-blue-400" : null
-                        }`
+                        `inline-block px-6 py-2 duration-200 hover:bg-blue-500 text-white rounded-xl font-bold ${
+                          isActive ? "bg-blue-600" : null
+                        }
+                        ${!isActive ? "bg-gray-900" : null}
+                        `
                       }
                     >
                       {item.name}
