@@ -43,7 +43,7 @@ function App() {
 
   return !loading ? (
     <ThemeProvider value={{ themeMode, lightTheme, darkTheme }}>
-      <div className="min-h-screen flex flex-wrap content-between p-2 bg-blue-200">
+      <div className="min-h-screen flex flex-wrap content-between p-2 bg-blue-200 dark:bg-blue-300">
         <div className="w-full block">
           <Header />
           <main>
