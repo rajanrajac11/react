@@ -1,16 +1,13 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
-import React from "react";
-
 const initialState = {
   todos: [
     {
-      text: "react project",
       id: 1,
+      text: "Read book",
     },
   ],
 };
-
-export const TodoSlice = createSlice({
+export const todoSlice = createSlice({
   name: "todo",
   initialState,
   reducers: {
@@ -27,6 +24,5 @@ export const TodoSlice = createSlice({
   },
 });
 
-export const { addTodo, removeTodo } = TodoSlice.actions;
-
-export default TodoSlice.reducer;
+export const { addTodo, removeTodo } = todoSlice.actions;
+export default todoSlice.reducer;
