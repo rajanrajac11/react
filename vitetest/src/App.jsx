@@ -1,17 +1,14 @@
 import React from "react";
-import useUser, { UserProvider } from "./ContextProvider/ContextProvider";
-import Form from "./components/Form";
-import UserProfile from "./components/UserProfile";
+import Header from "./components/Header";
+import { Outlet } from "react-router-dom";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="flex flex-wrap bg-gray-400 justify-center items-center w-full h-screen">
-      <div>
-        <UserProvider>
-          <Form />
-          <UserProfile />
-        </UserProvider>
-      </div>
+    <div className=" bg-gray-400  w-full h-screen">
+      <Header />
+      <Outlet />
+      <Footer />
     </div>
   );
 }
