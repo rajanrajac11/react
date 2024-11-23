@@ -7,23 +7,51 @@ import axios from "axios";
 function App() {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     const controller = new AbortController();
     (async () => {
       try {
-        const response = await axios.get("/api/products/");
+        setLoading(true);
+        setError(false);
+        const response = await axios.get("/api/products?search=" + search, {
+          signal: controller.signal,
+        });
         setProducts(response.data);
-        console.log(products);
+        setLoading(false);
+        console.log(response.data);
       } catch (error) {
+        if (axios.isCancel(error)) {
+          console.log("Request cancelled", error.message);
+          return;
+        }
         setError(true);
+        setLoading(false);
         console.log(error);
       }
     })();
-  }, []);
+
+    return () => {
+      controller.abort();
+    };
+  }, [search]);
+
   return (
     <>
+      <input
+        type="text"
+        name=""
+        id=""
+        value={search}
+        onChange={(e) => {
+          setSearch(e.target.value);
+        }}
+      />
       <h1>API Handling Test</h1>
+      {loading && <h1>Loading...</h1>}
+      {error && <h1>Something went wrong</h1>}
       <h3>No. of products = {products.length}</h3>
     </>
   );
