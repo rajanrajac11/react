@@ -13,18 +13,18 @@ function App() {
   useEffect(() => {
     const controller = new AbortController();
     (async () => {
+      setLoading(true);
+      setError(false);
       try {
-        setLoading(true);
-        setError(false);
         const response = await axios.get("/api/products?search=" + search, {
           signal: controller.signal,
         });
         setProducts(response.data);
-        setLoading(false);
         console.log(response.data);
+        setLoading(false);
       } catch (error) {
         if (axios.isCancel(error)) {
-          console.log("Request cancelled", error.message);
+          console.log("Request canceled", error.message);
           return;
         }
         setError(true);
@@ -37,7 +37,6 @@ function App() {
       controller.abort();
     };
   }, [search]);
-
   return (
     <>
       <input
@@ -49,10 +48,10 @@ function App() {
           setSearch(e.target.value);
         }}
       />
-      <h1>API Handling Test</h1>
+      <h1>API Handling</h1>
       {loading && <h1>Loading...</h1>}
-      {error && <h1>Something went wrong</h1>}
-      <h3>No. of products = {products.length}</h3>
+      {error && <h1>Someting went wrong</h1>}
+      <h2>No. of products = {products.length}</h2>
     </>
   );
 }
