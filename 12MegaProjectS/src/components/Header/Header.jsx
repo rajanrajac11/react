@@ -7,9 +7,6 @@ import LogoutBtn from "./LogoutBtn";
 import ThemeBtn from "../ThemeBtn";
 
 function Header() {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
   const authStatus = useSelector((state) => state.auth.status);
 
   const navItems = [
@@ -28,11 +25,7 @@ function Header() {
       slug: "/signup",
       active: !authStatus,
     },
-    // {
-    //   name: "All Posts",
-    //   slug: "/all-posts",
-    //   active: authStatus,
-    // },
+
     {
       name: "Add Post",
       slug: "/add-post",
