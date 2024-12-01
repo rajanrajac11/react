@@ -2,20 +2,19 @@ import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import axios from "axios";
+import axios, { isAxiosError, isCancel } from "axios";
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
-
   useEffect(() => {
     const controller = new AbortController();
     (async () => {
-      setLoading(true);
-      setError(false);
       try {
+        setLoading(true);
+        setError(false);
         const response = await axios.get("/api/products?search=" + search, {
           signal: controller.signal,
         });
@@ -24,12 +23,9 @@ function App() {
         setLoading(false);
       } catch (error) {
         if (axios.isCancel(error)) {
-          console.log("Request canceled", error.message);
-          return;
+          console.log("Request canceled", error);
         }
         setError(true);
-        setLoading(false);
-        console.log(error);
       }
     })();
 
@@ -39,6 +35,7 @@ function App() {
   }, [search]);
   return (
     <>
+      <h1>API Handling</h1>
       <input
         type="text"
         name=""
@@ -48,10 +45,8 @@ function App() {
           setSearch(e.target.value);
         }}
       />
-      <h1>API Handling</h1>
-      {loading && <h1>Loading...</h1>}
-      {error && <h1>Someting went wrong</h1>}
-      <h2>No. of products = {products.length}</h2>
+      {loading && <h1>Loading</h1>}
+      {!loading && <h1>No. of products:{products.length}</h1>}
     </>
   );
 }

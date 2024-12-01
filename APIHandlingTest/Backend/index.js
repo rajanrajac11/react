@@ -2,7 +2,7 @@ import express from "express";
 const app = express();
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => {
+app.listen(3000, () => {
   console.log(`Server is running at port ${port}`);
 });
 
@@ -10,18 +10,15 @@ app.get("/api/products", (req, res) => {
   const products = [
     {
       id: 1,
-      name: "table",
-      price: 2000,
+      name: "Table",
     },
     {
       id: 2,
       name: "Chair",
-      price: 200,
     },
     {
       id: 3,
       name: "Laptop",
-      price: 100000,
     },
   ];
   if (req.query.search) {
